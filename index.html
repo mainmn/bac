@@ -1,299 +1,331 @@
 <!DOCTYPE html>
 <html lang="ar">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>نحن جميعا سننجح في الباك</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      background: linear-gradient(-45deg, #2c3e50, #34495e, #1abc9c, #111);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      overflow: hidden;
-      position: relative;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نحن جميعا سننجح في الباك</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(-45deg, #2c3e50, #34495e, #1abc9c, #111);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
 
-    @keyframes gradient {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
 
-    /* نجوم */
-    .stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      z-index: 0;
-      overflow: hidden;
-    }
+            50% {
+                background-position: 100% 50%;
+            }
 
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      border-radius: 50%;
-      animation: twinkle 2s infinite ease-in-out;
-    }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.2; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.5); }
-    }
+        /* نجوم */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 0;
+            overflow: hidden;
+        }
 
-    h1 {
-      margin-top: 30px;
-      font-size: 3em; /* تكبير حجم العنوان */
-      animation: fadeText 4s ease-in-out infinite;
-      z-index: 1;
-    }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out;
+        }
 
-    @keyframes fadeText {
-      0%, 100% {opacity: 0;}
-      50% {opacity: 1;}
-    }
+        @keyframes twinkle {
 
-    img {
-      width: 300px; /* زيادة حجم الصور */
-      height: 280px;
-      object-fit: cover;
-      border-radius: 20px;
-      margin: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-      transition: transform 0.3s ease;
-    }
+            0%,
+            100% {
+                opacity: 0.2;
+                transform: scale(1);
+            }
 
-    img:hover {
-      transform: scale(1.1);
-    }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
 
-    #name-container {
-      font-size: 1.5em;
-      font-weight: bold;
-      margin-top: 20px;
-    }
+        h1 {
+            margin-top: 30px;
+            font-size: 3em;
+            /* تكبير حجم العنوان */
+            animation: fadeText 4s ease-in-out infinite;
+            z-index: 1;
+        }
 
-    .rectangular-container {
-      width: 90%;
-      max-width: 600px;
-      background-color: rgba(0, 0, 0, 0.6);
-      margin-top: 20px;
-      padding: 15px;
-      border-radius: 10px;
-      text-align: left;
-      font-size: 1.2em;
-    }
+        @keyframes fadeText {
 
-    .text {
-      display: none;
-      margin: 5px 0;
-    }
+            0%,
+            100% {
+                opacity: 0;
+            }
 
-    .audio-button {
-      background-color: #ffffff20;
-      color: white;
-      border: 2px solid white;
-      padding: 10px 20px;
-      margin-top: 20px;
-      border-radius: 8px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+            50% {
+                opacity: 1;
+            }
+        }
 
-    .audio-button:hover {
-      background-color: #ffffff40;
-    }
+        img {
+            width: 300px;
+            /* زيادة حجم الصور */
+            height: 280px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease;
+        }
 
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2em;
-      }
+        img:hover {
+            transform: scale(1.1);
+        }
 
-      .rectangular-container {
-        width: 80%;
-        font-size: 1em;
-      }
+        #name-container {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
 
-      #name-container {
-        font-size: 1em;
-      }
+        .rectangular-container {
+            width: 90%;
+            max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.6);
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 1.2em;
+        }
 
-      img {
-        width: 35p0x; /* تقليل حجم الصور على الأجهزة الصغيرة */
-        height: 301x;
-      }
-    }
-  </style>
+        .text {
+            display: none;
+            margin: 5px 0;
+        }
+
+        .audio-button {
+            background-color: #ffffff20;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .audio-button:hover {
+            background-color: #ffffff40;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .rectangular-container {
+                width: 80%;
+                font-size: 1em;
+            }
+
+            #name-container {
+                font-size: 1em;
+            }
+
+            img {
+                width: 35p0x;
+                /* تقليل حجم الصور على الأجهزة الصغيرة */
+                height: 301x;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <h1>نحن جميعًا سننجح في الباك إن شاء الله</h1>
-  <div class="container">
-    <img id="profile-image" src="" alt="صورة الشخص">
-    <div id="name-container"></div>
+    <h1>نحن جميعًا سننجح في الباك إن شاء الله</h1>
+    <div class="container">
+        <img id="profile-image" src="" alt="صورة الشخص">
+        <div id="name-container"></div>
+    </div>
+
+    <div class="rectangular-container" id="text-container">
+        <div class="text">
+            وما نيلُ المطالبِ بالتمني
+            <br>ولكن تُؤخذُ الدنيا غلابا
+            <br>(الإمام الشافعي)
+        </div>
+        <div class="text">
+            إذا غامَرتَ في شرفٍ مرومِ
+            <br>فلا تقنعْ بما دونَ النجومِ
+            <br>(الرمّاني)
+        </div>
+        <div class="text">
+            إن الله يجزي من تفانى في العمل *** لا من تمنى والى الكسل امتثل
+            <br>(محمد الامين بلعز)
+            <br>
+        </div>
+        <div class="text">
+            وإذا كانت النفوسُ كبارًا
+            <br>تعبت في مرادها الأجسامُ
+            <br>(المتنبي)
+        </div>
+        <div class="text">
+            على قدر أهل العزم تأتي العزائم
+            <br>وتأتي على قدر الكرام المكاره
+            <br>(المتنبي)
+        </div>
+        <div class="text">
+            إذا لم تكنْ إلا الأسنةُ مركبًا
+            <br>فلا تُبح بحارَها للأجنابِ
+            <br>(أحمد شوقي)
+        </div>
+        <div class="text">
+            ليسَ على المِقدارِ تكونُ السُرُرُ
+            <br>ولكن على العزمِ تكونُ النُجُومُ
+            <br>(الشاعر العربي)
+        </div>
+        <div class="text">
+            طُوبَى لمن كانت إرادته
+            <br>عزيمةً لا ترضى بالاستسلام
+            <br>(شعر معاصر)
+        </div>
+        <div class="text">
+            العزائمُ تطفو في بحرِ المدى
+            <br>والشجاعةُ رياحُها في السماء
+            <br>(شعر معاصر)
+        </div>
+        <div class="text">
+            قويٌ من يبني العزائم بأصله
+            <br>ويصنع المستحيل من المحال
+            <br>(شعر عربي معاصر)
+        </div>
+        <div class="text">
+            الذي يركبُ البحرَ لا يبالي
+            <br>بما يلاقيه من عواصف
+            <br>(مثل عربي)
+        </div>
+        <div class="text">
+            من جدّ وجد
+            <br>(مثل عربي)
+        </div>
+        <div class="text">
+            التفاؤل هو الطريق إلى النجاح
+            <br>(شعر معاصر)
+        </div>
+        <div class="text">
+            الرغبة في النجاح أقوى من أي عائق
+            <br>(مثل عربي)
+        </div>
+        <div class="text">
+            من يزرع الخير، يقطف النجاح
+            <br>(شعر معاصر)
+        </div>
+        <div class="text">
+            لا يأس مع الحياة
+            <br>(مثل عربي)
+        </div>
+        <div class="text">
+            الإصرار هو الطريق للإنجاز
+            <br>(شعر معاصر)
+        </div>
+        <div class="text">
+            النجاح لا يأتي صدفة، بل هو ثمرة العمل
+            <br>
+        </div>
+    </div>
+<!-- مجموعة الأزرار -->
+<div style="display: flex; gap: 10px; margin-top: 20px; z-index: 2;">
+    <button class="audio-button" onclick="document.getElementById('myAudio').play()">شغّل النشيد</button>
+    <a href="https://www.facebook.com/profile.php?id=100090690626782" target="_blank">
+      <button class="audio-button">متابعة المطور</button>
+    </a>
   </div>
+    <!-- ملف الصوت -->
+    <audio id="myAudio" loop>
+        <source src="nasheed.mp3" type="audio/mp3"> المتصفح لا يدعم تشغيل الصوت.
+    </audio>
+    <script>
+        const names = [
+            { name: "محمد الأمين بلعز", image: "19.jpg" },
+            { name: "أيوب حداد", image: "133.jpg" },
+            { name: "Mohamad Kerouaz", image: "15.jpg" },
+            { name: "Ay Men", image: "222.jpg" },
+            { name: "عبد العالي", image: "11.jpg" },
+            { name: "Djemmal Ayet Elraheman", image: "21.jpg" },
+            { name: "seif bibout", image: "14.jpg" },
+            { name: "Dσυαα Ισυανεμ", image: "16.jpg" },
+            { name: "Ritadje Belhour", image: "24.jpg" },
+            { name: "Salsabil Aissani", image: "6.jpg" },
+            { name: "Meriem Bouanimba", image: "25.jpg" },
+            { name: "Aya", image: "23.jpg" },
+            { name: "CHAIMA Trifa", image: ".jpg" },
+            { name: "Batoul Chergui", image: "3.jpg" },
+            { name: "Racha", image: "1.jpg" },
+            { name: "Douâa Douâa", image: "20.jpg" },
+            { name: "@imen", image: "2.jpg" },
+            { name: "Nada Guessas", image: "27.jpg" },
+            { name: "Reudeina Az", image: "8.jpg" },
+            { name: "Khouloud Bouguerra", image: "13.jpg" },
+            { name: "Aboura Fatima", image: "5.jpg" },
+            { name: "Nour Djeghloud", image: "9.jpg" },
+            { name: "Mayar Barkat", image: "30.jpg" },
+            { name: "Hanine Agabi", image: "7.jpg" },
+            { name: "Salsabil Sousou", image: ".jpg" },
+            { name: "hind meguellati", image: ".jpg" },
+            { name: "Aya Kerouaz", image: "12.jpg" },
+            { name: "bouanimba soundus", image: "25.jpg" },
+            { name: "Bibia aya", image: "26.jpg" },
+            { name: "salsabil zj", image: "10.jpg" },
+            { name: "Alaa mezghiche", image: "17.jpg" },
+            { name: "Bãtøul Ch", image: "22.jpg" }
+        ];
 
-  <div class="rectangular-container" id="text-container">
-    <div class="text">
-      وما نيلُ المطالبِ بالتمني
-      <br>ولكن تُؤخذُ الدنيا غلابا
-      <br>(الإمام الشافعي)
-    </div>
-    <div class="text">
-      إذا غامَرتَ في شرفٍ مرومِ
-      <br>فلا تقنعْ بما دونَ النجومِ
-      <br>(الرمّاني)
-    </div>
-    <div class="text">
-       إن الله يجزي من تفانى في العمل *** لا من تمنى والى الكسل امتثل
-      <br>(محمد الامين بلعز)
-      <br>  
-    </div>
-    <div class="text">
-      وإذا كانت النفوسُ كبارًا
-      <br>تعبت في مرادها الأجسامُ
-      <br>(المتنبي)
-    </div>
-    <div class="text">
-      على قدر أهل العزم تأتي العزائم
-      <br>وتأتي على قدر الكرام المكاره
-      <br>(المتنبي)
-    </div>
-    <div class="text">
-      إذا لم تكنْ إلا الأسنةُ مركبًا
-      <br>فلا تُبح بحارَها للأجنابِ
-      <br>(أحمد شوقي)
-    </div>
-    <div class="text">
-      ليسَ على المِقدارِ تكونُ السُرُرُ
-      <br>ولكن على العزمِ تكونُ النُجُومُ
-      <br>(الشاعر العربي)
-    </div>
-    <div class="text">
-      طُوبَى لمن كانت إرادته
-      <br>عزيمةً لا ترضى بالاستسلام
-      <br>(شعر معاصر)
-    </div>
-    <div class="text">
-      العزائمُ تطفو في بحرِ المدى
-      <br>والشجاعةُ رياحُها في السماء
-      <br>(شعر معاصر)
-    </div>
-    <div class="text">
-      قويٌ من يبني العزائم بأصله
-      <br>ويصنع المستحيل من المحال
-      <br>(شعر عربي معاصر)
-    </div>
-    <div class="text">
-      الذي يركبُ البحرَ لا يبالي
-      <br>بما يلاقيه من عواصف
-      <br>(مثل عربي)
-    </div>
-    <div class="text">
-      من جدّ وجد
-      <br>(مثل عربي)
-    </div>
-    <div class="text">
-      التفاؤل هو الطريق إلى النجاح
-      <br>(شعر معاصر)
-    </div>
-    <div class="text">
-      الرغبة في النجاح أقوى من أي عائق
-      <br>(مثل عربي)
-    </div>
-    <div class="text">
-      من يزرع الخير، يقطف النجاح
-      <br>(شعر معاصر)
-    </div>
-    <div class="text">
-      لا يأس مع الحياة
-      <br>(مثل عربي)
-    </div>
-    <div class="text">
-      الإصرار هو الطريق للإنجاز
-      <br>(شعر معاصر)
-    </div>
-    <div class="text">
-      النجاح لا يأتي صدفة، بل هو ثمرة العمل
-      <br>(شعر معاصر)
-    </div>
-  </div>
+        let index = 0;
+        function displayName() {
+            const current = names[index];
+            document.getElementById('profile-image').src = current.image;
+            document.getElementById('name-container').textContent = current.name;
+            index = (index + 1) % names.length;
+        }
 
-  <!-- زر تشغيل الصوت -->
-  <button class="audio-button" onclick="document.getElementById('myAudio').play()">شغّل النشيد</button>
+        setInterval(displayName, 2000);
+        displayName();
 
-  <!-- ملف الصوت -->
-  <audio id="myAudio" loop>
-    <source src="nasheed.mp3" type="audio/mp3"> المتصفح لا يدعم تشغيل الصوت.
-  </audio>
+        const texts = document.querySelectorAll('.text');
+        let textIndex = 0;
+        function showText() {
+            texts.forEach((t, i) => t.style.display = (i === textIndex ? 'block' : 'none'));
+            textIndex = (textIndex + 1) % texts.length;
+        }
 
-  <script>
-    const names = [
-      {name: "محمد الأمين بلعز", image: "19.jpg"},
-      {name: "أيوب حداد", image: "133.jpg"},
-      {name: "Mohamad Kerouaz", image: "15.jpg"},
-      {name: "Ay Men", image: "222.jpg"},
-      {name: "عبد العالي", image: "11.jpg"},
-      {name: "Djemmal Ayet Elraheman", image: "21.jpg"},
-      {name: "seif bibout", image: "14.jpg"},
-      {name: "Dσυαα Ισυανεμ", image: "16.jpg"},
-      {name: "Ritadje Belhour", image: "24.jpg"},
-      {name: "Salsabil Aissani", image: "6.jpg"},
-      {name: "Meriem Bouanimba", image: "25.jpg"},
-      {name: "Aya", image: "23.jpg"},
-      {name: "CHAIMA Trifa", image: ".jpg"},
-      {name: "Batoul Chergui", image: "3.jpg"},
-      {name: "Racha", image: "1.jpg"},
-      {name: "Douâa Douâa", image: "20.jpg"},
-      {name: "@imen", image: "2.jpg"},
-      {name: "Nada Guessas", image: "27.jpg"},
-      {name: "Reudeina Az", image: "8.jpg"},
-      {name: "Khouloud Bouguerra", image: "13.jpg"},
-      {name: "Aboura Fatima", image: "5.jpg"},
-      {name: "Nour Djeghloud", image: "9.jpg"},
-      {name: "Mayar Barkat", image: "30.jpg"},
-      {name: "Hanine Agabi", image: "7.jpg"},
-      {name: "Salsabil Sousou", image: ".jpg"},
-      {name: "hind meguellati", image: ".jpg"},
-      {name: "Aya Kerouaz", image: "12.jpg"},
-      {name: "bouanimba soundus", image: "25.jpg"},
-      {name: "Bibia aya", image: "26.jpg"},
-      {name: "salsabil zj", image: "10.jpg"},
-      {name: "Alaa mezghiche", image: "17.jpg"},
-      {name: "Bãtøul Ch", image: "22.jpg"}
-    ];
-
-    let index = 0;
-    function displayName() {
-      const current = names[index];
-      document.getElementById('profile-image').src = current.image;
-      document.getElementById('name-container').textContent = current.name;
-      index = (index + 1) % names.length;
-    }
-
-    setInterval(displayName, 2000);
-    displayName();
-
-    const texts = document.querySelectorAll('.text');
-    let textIndex = 0;
-    function showText() {
-      texts.forEach((t, i) => t.style.display = (i === textIndex ? 'block' : 'none'));
-      textIndex = (textIndex + 1) % texts.length;
-    }
-
-    setInterval(showText, 4000);
-    showText();
-  </script>
+        setInterval(showText, 4000);
+        showText();
+    </script>
 </body>
+
 </html>
